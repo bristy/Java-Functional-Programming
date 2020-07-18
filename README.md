@@ -1,6 +1,6 @@
 ### Java functional programming examples.
 
 ### Run
-./gradlew test
+`./gradlew test`
 
-Borrowed from https://stackify.com/streams-guide-java-8/
+Borrowed from https://stackify.com/streams-guide-java-/
