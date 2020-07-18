@@ -9,11 +9,14 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class EmployeeTest {
-    @Test public void testIncrementSalary() {
+    @Test
+    public void testForEach() {
         final List<Employee> testEmployees = Arrays.asList(
                 new Employee(1, "test1", 100.0),
                 new Employee(2, "test2", 200.0)
@@ -26,7 +29,8 @@ public class EmployeeTest {
         ));
     }
 
-    @Test public void testEmployeeIdsToEmployee() {
+    @Test
+    public void testMap() {
         final Integer[] empIds = {1, 2, 3};
         final List<Employee> testEmployees = Arrays.asList(empIds).stream()
                 .map(id -> new Employee(id, "test" + id, 0.0))
@@ -35,6 +39,21 @@ public class EmployeeTest {
                 hasProperty("id", equalTo(1)),
                 hasProperty("id", equalTo(2)),
                 hasProperty("id", equalTo(3))
+        ));
+    }
+
+    @Test
+    public void testFilter() {
+        final Integer[] empIds = {1, 2, 3, 4};
+        final List<Employee> testEmployees = Arrays.asList(empIds).stream()
+                .map(id -> new Employee(id, "test" + id, 10000.0 * id))
+                .filter(employee -> employee.getSalary() > 20000.0)
+                .collect(Collectors.toList());
+
+        assertThat(testEmployees, hasSize(equalTo(2)));
+        assertThat(testEmployees, contains(
+                hasProperty("salary", greaterThan(20000.0)),
+                hasProperty("salary", greaterThan(20000.0))
         ));
     }
 }
