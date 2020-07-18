@@ -1,4 +1,4 @@
-### Java 8 stream examples.
+### Java functional programming examples.
 
 ### Run
 ./gradlew test
