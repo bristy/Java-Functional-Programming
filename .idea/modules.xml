@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaStreams.iml" filepath="$PROJECT_DIR$/JavaStreams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaStreams.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaStreams.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaStreams.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaStreams.test.iml" />
     </modules>
   </component>
 </project>
